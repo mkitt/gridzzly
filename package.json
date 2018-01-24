@@ -27,7 +27,7 @@
   "scripts": {
     "build": "next build && next export",
     "dev": "next",
-    "prepublish": "babel src -d dist",
+    "prepare": "babel src -d dist --ignore '**/*.test.js'",
     "flow": "flow",
     "lint": "eslint ./src ./pages",
     "test": "jest"
@@ -37,6 +37,7 @@
     "react": ">= 16.0.0"
   },
   "devDependencies": {
+    "babel-cli": "6.26.0",
     "babel-eslint": "8.2.1",
     "babel-jest": "22.1.0",
     "babel-preset-env": "1.6.1",
