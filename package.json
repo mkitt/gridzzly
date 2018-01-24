@@ -1,0 +1,68 @@
+{
+  "name": "gridzzly",
+  "author": "Matthew Kitt <mk@mkitt.net>",
+  "description": "React component for aligning layouts",
+  "homepage": "https://github.com/mkitt/gridzzly",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/Gridzzly.js",
+  "keywords": [
+    "devtools",
+    "grid",
+    "gui",
+    "react",
+    "ui",
+    "user interface"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkitt/gridzzly.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkitt/gridzzly/issues"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "next build && next export",
+    "dev": "next",
+    "prepublish": "babel src -d dist",
+    "flow": "flow",
+    "lint": "eslint ./src ./pages",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">= 16.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "babel-jest": "22.1.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-flow": "6.23.0",
+    "eslint": "4.16.0",
+    "eslint-config-mkitt": "4.0.0",
+    "flow-bin": "0.63.1",
+    "jest": "22.1.4",
+    "next": "4.2.3",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-test-renderer": "16.2.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "flow",
+      "next/babel"
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
+  "eslintConfig": {
+    "extends": "mkitt"
+  }
+}
