@@ -83,4 +83,4 @@ Then edit the Release on GitHub.
 
 ## Todo
 - [ ] Declare flowtypes
-- [ ] Improve docs
+- [ ] Improve documentation

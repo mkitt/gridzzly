@@ -25,7 +25,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "next build && next export -o build && echo > ./build/.nojekyl",
+    "build": "next build && next export -o build && echo > ./build/.nojekyll",
     "dev": "next",
     "prepare": "babel src -d dist --ignore '**/*.test.js'",
     "flow": "flow",
