@@ -69,6 +69,6 @@ zIndex?: number,          // 2
 ```
 
 ## Todo
-- Publish lib
-- Publish pages
-- Add travis (publish gh-pages & release)
+- [ ] Add travis (publish gh-pages & release)
+- [ ] Declare flowtypes
+- [ ] Improve docs

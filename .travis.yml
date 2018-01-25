@@ -3,10 +3,10 @@ node_js:
   - "stable"
 cache: yarn
 script:
-- yarn flow
-- yarn lint
-- yarn test
-- yarn build
+  - yarn flow
+  - yarn lint
+  - yarn test
+  - yarn build
 deploy:
   provider: pages
   skip_cleanup: true

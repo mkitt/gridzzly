@@ -3,6 +3,7 @@
 .next
 *.log
 *.map
-dist
+build
 coverage
+dist
 node_modules
