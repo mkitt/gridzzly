@@ -45,14 +45,14 @@ Or as a grid over a contained component:
 </main>
 ```
 
-## Options and defaults
+## Options, types and default values
 
 ```js
 autoHide?: boolean,       // false
 columnSize?: ?number,     // defaults to `size`
 colorInner?: string,      // rgba(255, 0, 255, 0.5)
 colorOuter?: string,      // rgba(255, 0, 255, 1.0)
-cycleKey?: ?string,       // null (key to cycle between rows or columns)
+cycleKey?: ?string,       // null (key to cycle rows & columns)
 dashInner?: string,       // '2, 2'
 dashOuter?: string,       // '' (solid line)
 hasInner?: boolean,       // true
@@ -71,6 +71,6 @@ zIndex?: number,          // 2
 ```
 
 ## Todo
-- [ ] Add travis (release)
+- [ ] Add travis
 - [ ] Declare flowtypes
 - [ ] Improve docs
