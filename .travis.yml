@@ -9,14 +9,15 @@ script:
   - yarn build
 deploy:
   - provider: pages
-    github_token: $GITHUB_TOKEN
-    local_dir: build
-    skip_cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    local-dir: build
+    skip-cleanup: true
     on:
-      branch: master
+      tags: true
   - provider: npm
     email: mk@mkitt.net
     api_key: $NPM_TOKEN
-    skip_cleanup: true
+    skip-cleanup: true
     on:
       tags: true
