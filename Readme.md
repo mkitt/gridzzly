@@ -1,6 +1,8 @@
 # Gridzzly.
 React component for aligning layouts.
 
+[![Travis Build Status](https://travis-ci.org/mkitt/gridzzly.svg?branch=master)](https://travis-ci.org/mkitt/gridzzly)
+
 ## Installation
 
 ```sh
@@ -69,6 +71,6 @@ zIndex?: number,          // 2
 ```
 
 ## Todo
-- [ ] Add travis (publish gh-pages & release)
+- [ ] Add travis (release)
 - [ ] Declare flowtypes
 - [ ] Improve docs
