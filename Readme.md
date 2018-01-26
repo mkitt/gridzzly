@@ -70,17 +70,7 @@ left?: number | string,   // 0
 zIndex?: number,          // 2
 ```
 
-## Releasing
-Travis takes care of publishing to npm and to the `pages` branch on a tagged
-commit. Run the following when ready for a version bump:
-
-```sh
-yarn version
-git push origin master —-tags
-```
-
-Then edit the Release on GitHub.
+🐻🐼 
 
 ## Todo
-- [ ] Declare flowtypes
 - [ ] Improve documentation
