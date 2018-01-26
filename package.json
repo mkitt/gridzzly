@@ -28,7 +28,7 @@
   "scripts": {
     "build": "next build && next export -o build && echo > ./build/.nojekyll",
     "dev": "next",
-    "prepare": "babel src -d dist --ignore '**/*.test.js'",
+    "prepare": "babel src -d dist --ignore '**/*.test.js' && cp src/Gridzzly.js dist/Gridzzly.js.flow",
     "flow": "flow",
     "lint": "eslint ./src ./pages",
     "test": "jest"
