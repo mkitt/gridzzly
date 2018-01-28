@@ -1,6 +1,10 @@
 # Gridzzly.
 React component for aligning layouts.
 
+View the [demo](http://mkitt.net/gridzzly/).
+
+🐻🐼 
+
 [![Travis Build Status](https://travis-ci.org/mkitt/gridzzly.svg?branch=master)](https://travis-ci.org/mkitt/gridzzly)
 
 ## Installation
@@ -14,7 +18,7 @@ yarn add gridzzly
 ## Usage
 Gridzzly fills the parent container with a grid.
 
-As fixed grid over the entire page:
+As a fixed grid over the entire page:
 
 ```js
 <main style={{ position: 'relative' }}>
@@ -59,7 +63,7 @@ dashOuter?: string,       // '' (solid line)
 hasInner?: boolean,       // true
 isDisabled?: boolean,     // false
 opacity?: number,         // 0.2
-persist: boolean          // false (store grid state in session)
+persist: boolean          // false (store grid state in sessionStorage)
 rowSize?: ?number,        // defaults to `size`
 size?: number,            // 16,
 strokeWidth?: number,     // 1,
@@ -71,8 +75,3 @@ bottom?: number | string, // 0
 left?: number | string,   // 0
 zIndex?: number,          // 2
 ```
-
-🐻🐼 
-
-## Todo
-- [ ] Improve documentation

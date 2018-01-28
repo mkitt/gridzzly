@@ -77,9 +77,9 @@ const getStyle = (props) => {
 
 type Props = {
   autoHide?: boolean,
-  columnSize?: ?number,
   colorInner?: string,
   colorOuter?: string,
+  columnSize?: ?number,
   cycleKey?: ?string,
   dashInner?: string,
   dashOuter?: string,

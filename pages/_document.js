@@ -14,7 +14,42 @@ const globalStyles = `
   body { position: relative; margin: 0; overflow-x: hidden; background-color: #fff; }
   ::selection { color: #fff; text-shadow: none; background: #000; }
   h1, h2, h3, h4, h5, h6, p { margin: 0; line-height: 1.25; }
+  p { font-size: 14px; }
   a { color: inherit; background-color: transparent; -webkit-text-decoration-skip: objects; }
+  .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 32px;
+    height: 320px;
+    background-color: #f0f0f0;
+    z-index: 3;
+  }
+  .controls {
+    position: relative;
+    display: grid;
+    grid-gap: 8px;
+    grid-template-columns: 1fr;
+  }
+  .constrain {
+    margin: 16px;
+  }
+  @media(min-width: 47.5em) {
+    .constrain {
+      margin: 32px;
+    }
+    .controls {
+      grid-template-columns: 1fr 1fr;
+    }
+  @media(min-width: 63.5em) {
+    .constrain {
+      margin: 64px;
+    }
+    .controls {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 `
 
 export default class extends Document {
