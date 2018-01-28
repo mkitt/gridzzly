@@ -20,6 +20,7 @@ As fixed grid over the entire page:
 <main style={{ position: 'relative' }}>
   <Gridzzly
     autoHide
+    persist
     cycleKey="~"
     position="fixed"
     size={32}
@@ -49,15 +50,16 @@ Or as a grid over a contained component:
 
 ```js
 autoHide?: boolean,       // false
-columnSize?: ?number,     // defaults to `size`
 colorInner?: string,      // rgba(255, 0, 255, 0.5)
 colorOuter?: string,      // rgba(255, 0, 255, 1.0)
+columnSize?: ?number,     // defaults to `size`
 cycleKey?: ?string,       // null (key to cycle rows & columns)
 dashInner?: string,       // '2, 2'
 dashOuter?: string,       // '' (solid line)
 hasInner?: boolean,       // true
 isDisabled?: boolean,     // false
 opacity?: number,         // 0.2
+persist: boolean          // false (store grid state in session)
 rowSize?: ?number,        // defaults to `size`
 size?: number,            // 16,
 strokeWidth?: number,     // 1,

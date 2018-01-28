@@ -5,13 +5,17 @@ const isListenable = props => (
   (typeof document !== 'undefined') && (props.cycleKey != null || props.toggleKey != null)
 )
 
-const defaultSize = (wanted, size) => (
-  wanted != null ? wanted : size
+const defaultTo = (defaultValue, wantedValue) => (
+  wantedValue != null ? wantedValue : defaultValue
+)
+
+const getStorageNamespace = ({ cycleKey, toggleKey }) => (
+  `Griddzly.${cycleKey || ''}${toggleKey || ''}`
 )
 
 const getSizes = props => ({
-  cs: defaultSize(props.columnSize, props.size),
-  rs: defaultSize(props.rowSize, props.size),
+  cs: defaultTo(props.size, props.columnSize),
+  rs: defaultTo(props.size, props.rowSize),
 })
 
 const getColumnLineOuter = (props) => {
@@ -51,7 +55,9 @@ const getLines = props => ([
 
 const getStyle = (props) => {
   const lines = getLines(props)
-  if (props.isDisabled || !lines.length) { return { display: 'none' } }
+  if (props.isDisabled || !lines.length) {
+    return { display: 'none' }
+  }
   const { cs, rs } = getSizes(props)
   const bgi = getBase64GridString({ cs, rs, lines })
   return {
@@ -80,6 +86,7 @@ type Props = {
   hasInner?: boolean,
   isDisabled?: boolean,
   opacity?: number,
+  persist?: boolean,
   rowSize?: ?number,
   size?: number,
   strokeWidth?: number,
@@ -102,15 +109,16 @@ export default class extends PureComponent<Props, State> {
     autoHide: false,
     colorInner: 'rgba(255, 0, 255, 0.75)',
     colorOuter: 'rgba(255, 0, 255, 1.0)',
+    columnSize: null,
     cycleKey: null,
     dashInner: '2, 2',
     dashOuter: '',
     hasInner: true,
     isDisabled: false,
     opacity: 0.2,
-    size: 16,
-    columnSize: null,
+    persist: false,
     rowSize: null,
+    size: 16,
     strokeWidth: 1,
     toggleKey: null,
     position: 'absolute',
@@ -130,6 +138,9 @@ export default class extends PureComponent<Props, State> {
     if (isListenable(this.props)) {
       document.addEventListener('keydown', this.onKeyDown)
     }
+    if (this.props.persist === true) {
+      this.retrieve()
+    }
   }
 
   componentWillUnmount() {
@@ -147,29 +158,56 @@ export default class extends PureComponent<Props, State> {
     }
   }
 
+  update = ({ showRows, showColumns }: { showRows: boolean, showColumns: boolean }) => {
+    this.setState({ showRows, showColumns })
+    if (this.props.persist === true) {
+      this.persist()
+    }
+  }
+
+  persist = () => {
+    const { showRows, showColumns } = this.state
+    if (window && window.sessionStorage) {
+      const namespace = getStorageNamespace(this.props)
+      sessionStorage.setItem(`${namespace}.showRows`, JSON.stringify(showRows))
+      sessionStorage.setItem(`${namespace}.showColumns`, JSON.stringify(showColumns))
+    }
+  }
+
+  retrieve = () => {
+    const { showColumns, showRows } = this.state
+    if (window && window.sessionStorage) {
+      const namespace = getStorageNamespace(this.props)
+      this.setState({
+        showRows: JSON.parse(sessionStorage.getItem(`${namespace}.showRows`) || 'null') || showRows,
+        showColumns: JSON.parse(sessionStorage.getItem(`${namespace}.showColumns`) || 'null') || showColumns,
+      })
+    }
+  }
+
   cycle = () => {
     const { showRows, showColumns } = this.state
     if (showRows && showColumns) {
-      this.setState({ showRows: false, showColumns })
+      this.update({ showRows: false, showColumns })
     } else if (!showRows && !showColumns) {
-      this.setState({ showRows, showColumns: true })
+      this.update({ showRows, showColumns: true })
     } else if (showRows && !showColumns) {
-      this.setState({ showRows: false, showColumns: true })
+      this.update({ showRows: false, showColumns: true })
     } else if (!showRows && showColumns) {
-      this.setState({ showRows: true, showColumns: false })
+      this.update({ showRows: true, showColumns: false })
     }
   }
 
   toggle = () => {
     const { showRows, showColumns } = this.state
     if (showRows && showColumns) {
-      this.setState({ showRows: false, showColumns: false })
+      this.update({ showRows: false, showColumns: false })
     } else if (!showRows && !showColumns) {
-      this.setState({ showRows: true, showColumns: true })
+      this.update({ showRows: true, showColumns: true })
     } else if (showRows && !showColumns) {
-      this.setState({ showRows, showColumns: true })
+      this.update({ showRows, showColumns: true })
     } else if (!showRows && showColumns) {
-      this.setState({ showRows: true, showColumns })
+      this.update({ showRows: true, showColumns })
     }
   }
 

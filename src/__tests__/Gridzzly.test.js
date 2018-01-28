@@ -6,6 +6,7 @@ describe('<Gridzzly />', () => {
   it('shows the correct snapshot tree for the <Gridzzly> component (fixed)', () => {
     const component = (
       <Gridzzly
+        persist
         columnSize={32}
         cycleKey="~"
         position="fixed"

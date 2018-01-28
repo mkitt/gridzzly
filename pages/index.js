@@ -6,6 +6,7 @@ export default () => (
   <Main>
     <Gridzzly
       autoHide
+      persist
       cycleKey="~"
       toggleKey="`"
       position="fixed"
