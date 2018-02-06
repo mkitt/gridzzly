@@ -3,7 +3,7 @@
   "author": "Matthew Kitt <mk@mkitt.net>",
   "description": "React component for aligning layouts",
   "homepage": "https://github.com/mkitt/gridzzly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/Gridzzly.js",
   "keywords": [
