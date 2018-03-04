@@ -1,3 +1,5 @@
+<img src="https://mkitt.net/apple-touch-icon.png" width="80px" height="80px" />
+
 # Gridzzly.
 React component for aligning layouts.
 
@@ -75,3 +77,8 @@ bottom?: number | string, // 0
 left?: number | string,   // 0
 zIndex?: number,          // 2
 ```
+
+[mkitt.net][mkitt.net] | [github/mkitt][github]
+
+[github]: https://github.com/mkitt "@mkitt"
+[mkitt.net]: https://mkitt.net "🏔"

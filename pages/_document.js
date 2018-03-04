@@ -57,6 +57,7 @@ export default class extends Document {
     return (
       <html lang="en">
         <Head>
+          <title>mkitt | gridzzly</title>
           <style>{globalStyles}</style>
         </Head>
         <body>
