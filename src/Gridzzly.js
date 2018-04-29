@@ -96,6 +96,9 @@ type Props = {
   right?: number | string,
   bottom?: number | string,
   left?: number | string,
+  style?: ?{
+    [key: string]: string | number | null,
+  },
   zIndex?: number,
 }
 
@@ -120,6 +123,7 @@ export default class extends PureComponent<Props, State> {
     rowSize: null,
     size: 16,
     strokeWidth: 1,
+    style: null,
     toggleKey: null,
     position: 'absolute',
     top: 0,
@@ -216,9 +220,10 @@ export default class extends PureComponent<Props, State> {
     Object.keys(this.constructor.defaultProps).forEach((key) => {
       delete elementProps[key]
     })
+    // style={getStyle({ ...this.props, ...this.state })}
     return (
       <div
-        style={getStyle({ ...this.props, ...this.state })}
+        style={getStyle(Object.assign({}, this.props, this.state))}
         {...elementProps}
       />
     )

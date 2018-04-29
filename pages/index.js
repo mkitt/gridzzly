@@ -112,6 +112,7 @@ const Control = ({ name, onChange, type, value, ...props }: ControlProps) => (
       onChange={onChange}
       type={type}
       value={value}
+      // $FlowFixMe
       {...props}
     />
   </label>

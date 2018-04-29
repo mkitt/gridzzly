@@ -39,17 +39,17 @@
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
-    "babel-jest": "22.4.1",
+    "babel-jest": "22.4.3",
     "babel-preset-env": "1.6.1",
     "babel-preset-flow": "6.23.0",
-    "eslint": "4.18.2",
+    "eslint": "4.19.1",
     "eslint-config-mkitt": "4.3.0",
-    "flow-bin": "0.67.1",
-    "jest": "22.4.2",
-    "next": "5.0.0",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "react-test-renderer": "16.2.0"
+    "flow-bin": "0.71.0",
+    "jest": "22.4.3",
+    "next": "5.1.0",
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-test-renderer": "16.3.2"
   },
   "babel": {
     "presets": [
