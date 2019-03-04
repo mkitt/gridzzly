@@ -1,6 +1,6 @@
 <img src="https://mkitt.net/apple-touch-icon.png" width="80px" height="80px" />
 
-# Gridzzly.
+# Gridzzly. (Deprecated)
 React component for aligning layouts.
 
 View the [demo](http://mkitt.net/gridzzly/).
